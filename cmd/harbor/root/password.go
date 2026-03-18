@@ -25,13 +25,14 @@ import (
 
 func PasswordCommand() *cobra.Command {
 	var opts change.PasswordChangeView
+	var isAdmin bool
 
 	cmd := &cobra.Command{
 		Use:   "password",
 		Short: "Change your password",
 		Args:  cobra.MinimumNArgs(0),
 		RunE: func(cmd *cobra.Command, args []string) error {
-			change.ChangePasswordView(&opts)
+			change.ChangePasswordView(&opts, isAdmin)
 
 			err := UpdatePassword(&opts)
 			if err != nil {
@@ -40,6 +41,8 @@ func PasswordCommand() *cobra.Command {
 			return nil
 		},
 	}
+
+	cmd.Flags().BoolVar(&isAdmin, "admin", false, "Admin password change")
 
 	return cmd
 }

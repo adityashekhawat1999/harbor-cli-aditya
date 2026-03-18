@@ -28,7 +28,7 @@ type PasswordChangeView struct {
 	ConfirmPassword string
 }
 
-func ChangePasswordView(view *PasswordChangeView) {
+func ChangePasswordView(view *PasswordChangeView, isAdmin bool) {
 	theme := huh.ThemeCharm()
 
 	err := huh.NewForm(
@@ -38,7 +38,7 @@ func ChangePasswordView(view *PasswordChangeView) {
 				EchoMode(huh.EchoModePassword).
 				Value(&view.OldPassword).
 				Validate(func(str string) error {
-					if strings.TrimSpace(str) == "" {
+					if !isAdmin && strings.TrimSpace(str) == "" {
 						return errors.New("old password cannot be empty")
 					}
 					return nil
