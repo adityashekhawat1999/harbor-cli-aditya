@@ -15,8 +15,8 @@ harbor password [flags]
 ### Options
 
 ```sh
-      --admin  admin password change
-  -h, --help   help for password
+      --admin   Admin password change
+  -h, --help    help for password
 ```
 
 ### Options inherited from parent commands
