@@ -42,6 +42,8 @@ sudo apk add --allow-untrusted harbor-cli_<version>_linux_amd64.apk
 
 APT based installation is available via the project's gh-pages branch. Refer to the repository for more details.
 
+The repository is generated using Dagger (see `.dagger/apt.go`). Please refer to it for the exact repository structure and usage.
+
 
 ## Security
 
