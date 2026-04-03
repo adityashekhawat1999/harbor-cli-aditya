@@ -62,4 +62,12 @@ The repository is generated using Dagger (see `.dagger/apt.go`). Please refer to
 
 ## Security
 
-Harbor CLI provides security features such as SBOM (Software Bill of Materials) and Cosign support for verifying artifacts. These help ensure the integrity and authenticity of distributed binaries.
+Harbor CLI provides attested binaries and artifacts to ensure integrity and authenticity.
+
+Artifacts are signed using Cosign as part of the release process enabling verification of distributed binaries and container images.
+
+SHA256 checksums are generated for all release artifacts allowing users to validate downloads.
+
+Additionally, SBOMs (Software Bill of Materials) are generated for each release using Syft in CycloneDX format providing transparency into dependencies and build contents.
+
+These features help ensure the integrity and trustworthiness of Harbor CLI artifacts.
