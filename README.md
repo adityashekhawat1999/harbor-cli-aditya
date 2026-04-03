@@ -92,6 +92,8 @@ brew install harbor-cli
 
 Otherwise, you can download the binary from the [releases page](https://github.com/goharbor/harbor-cli/releases).
 
+For detailed installation instructions (binary, deb, rpm, apk, apt), see [INSTALL.md](./INSTALL.md).
+
 ## Add the Harbor CLI to your Container Image
 
 Using Curl or Wget isn't needed if you want to 
