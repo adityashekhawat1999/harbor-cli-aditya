@@ -70,7 +70,7 @@ docker run -ti --rm -v $HOME/.config/harbor-cli:/root/.config/harbor-cli \
   --help
 ```
 
-## Linux, macOS and Windows
+## Linux/macOS 
 
 On Linux and macOS, you can use Homebrew:
 
