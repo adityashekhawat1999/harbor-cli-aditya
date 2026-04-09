@@ -55,10 +55,27 @@ sudo apk add --allow-untrusted harbor-cli_<version>_linux_amd64.apk
 
 #### APT repository
 
-APT based installation is available via the project's gh-pages branch. Refer to the repository for more details.
+Harbor CLI provides an APT repository for Debian/Ubuntu systems.    
 
-The repository is generated using Dagger (see `.dagger/apt.go`). Please refer to it for the exact repository structure and usage.
+1. Add the repository:
 
+```bash
+echo "deb [trusted=yes] https://goharbor.github.io/harbor-cli/buildDirs/stable /" | sudo tee /etc/apt/sources.list.d/harbor-cli.list
+```
+
+2. Update package index:
+
+```bash
+sudo apt update
+```
+
+3. Install Harbor CLI:
+
+```bash
+sudo apt install harbor-cli
+```
+
+> Note: The repository currently uses `trusted=yes` which skips signature verification.
 
 ## Security
 
